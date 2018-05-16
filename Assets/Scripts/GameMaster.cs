@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class GameMaster : Singleton<GameMaster>
@@ -10,12 +10,12 @@ public class GameMaster : Singleton<GameMaster>
 
 
 
-	public static readonly string Version = "Indev 0.2.0";
+	public static readonly string Version = "Indev 0.3.0";
 
 	IEnumerator Start()
 	{
 		Application.targetFrameRate = 60;
-
+		
 		CursorLocked = true;
 
 		yield return ChunkRenderer.Instance.Populate(System.DateTime.Now.GetHashCode());

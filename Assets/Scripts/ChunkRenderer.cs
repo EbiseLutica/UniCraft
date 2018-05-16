@@ -1,4 +1,4 @@
-//  以下のサイトからいただきました
+﻿//  以下のサイトからいただきました
 //  http://kan-kikuchi.hatenablog.com/entry/PerlinNoise
 //
 //  Created by kan kikuchi on 2016.3.14.

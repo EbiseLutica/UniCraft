@@ -259,9 +259,9 @@ MonoBehaviour:
   - Key: unicraft:stone
     Block: {fileID: 114403519079201620, guid: a9291a31f31804342a7f784e28c6240c, type: 2}
   - Key: unicraft:dirt
-    Block: {fileID: 114302907107841076, guid: 2a160ca8362d04b04b5519efad6466f8, type: 2}
+    Block: {fileID: 114983631396022602, guid: 2a160ca8362d04b04b5519efad6466f8, type: 2}
   - Key: unicraft:grass
-    Block: {fileID: 114750248133944290, guid: 0d7a41fd70f2d45edb6d81f72e03c23d, type: 2}
+    Block: {fileID: 114565191082019706, guid: 0d7a41fd70f2d45edb6d81f72e03c23d, type: 2}
   - Key: unicraft:bedrock
     Block: {fileID: 114726370364070532, guid: dee0dc4f0626b46ad92dbfbf13db93dc, type: 2}
 --- !u!224 &809571682 stripped
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 16
   _depth: 16
-  _maxHeight: 80
+  _maxHeight: 50
   amp: 15
   mapSize: 1
 --- !u!4 &1499426813

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33433752976364680}
   - component: {fileID: 23266676566264780}
   - component: {fileID: 65378710109846730}
-  - component: {fileID: 114302907107841076}
+  - component: {fileID: 114983631396022602}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Untagged
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114302907107841076
+--- !u!114 &114983631396022602
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -105,9 +105,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1029446750416860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01b11d7b8df564804802604bc4891c19, type: 3}
+  m_Script: {fileID: 11500000, guid: 586e7536707c54352ac7ac48f653f1b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  miningTime: 2
-  hardness: 0
-  breakableTool: 0
