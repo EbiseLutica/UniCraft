@@ -16,7 +16,7 @@ public class LoadingBehaviour : BaseBehaviour
 			return;
 		}
 
-		text.text = $@"Chunk Loading...\n{ChunkRenderer.Instance.Progress}%";
+		text.text = $"Chunk Loading...\n{ChunkRenderer.Instance.Progress}%";
 		
 		// 読み終わったら削除
 		if (ChunkRenderer.Instance.Loaded)
