@@ -73,7 +73,6 @@ public class PlayerEntity : BaseBehaviour
 	{
 		Health = MaxHealth;
 		cc = GetComponent<CharacterController>();
-		
 	}
 
 	float timeTmp;
@@ -157,7 +156,7 @@ public class PlayerEntity : BaseBehaviour
 			{
 				var candidate = Vector3Int.CeilToInt(LookingBlock.Location + hit.normal);
 				
-				Chunk.SetBlock("unicraft:dirt", candidate);
+				Chunk.SetBlock(UniCraft.BlockIdInHand, candidate);
 			}
 
 

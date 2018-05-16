@@ -18,10 +18,10 @@ UniCraft is a sandbox game made with Unity.
 - Destroying a block
 - Placing a block
 - Some blocks
+- Selecting a block to place
 
 **The following is not implemented yet.**
 
-- Selecting a block to place
 - Saving maps
 - Maps generation with a specific seed value
 - More blocks

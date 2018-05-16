@@ -20,6 +20,28 @@ public class GameMaster : Singleton<GameMaster>
 
 		yield return ChunkRenderer.Instance.Populate(System.DateTime.Now.GetHashCode());
 		SpawnPlayer(new Vector3(0, ChunkRenderer.Instance.GetSurfaceY(0, 0) + 2, 0));
+		blockIds = BlockRegister.Instance.GetBlockIds();
+	}
+
+	private string[] blockIds;
+
+	int blockInHand;
+
+	public string BlockIdInHand => blockIds[blockInHand];
+
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.LeftArrow))
+			blockInHand--;
+		if (Input.GetKeyDown(KeyCode.RightArrow))
+			blockInHand++;
+		
+		if (blockInHand < 0)
+			blockInHand = blockIds.Length - 1;
+
+		if (blockInHand >= blockIds.Length)
+			blockInHand = 0;
+			
 	}
 
 	public bool CursorLocked

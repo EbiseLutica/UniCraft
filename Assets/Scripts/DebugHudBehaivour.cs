@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Text))]
-public class DebugHudBehaivour : MonoBehaviour {
+public class DebugHudBehaivour : BaseBehaviour {
 
 	PlayerEntity player;
 
@@ -15,6 +15,7 @@ public class DebugHudBehaivour : MonoBehaviour {
 									+ "\n"
 									+ "FPS:{1}\n"
 									+ "Pp:{2} Pv:{3} Pg:{4}\n"
+									+ "Hand: {5}"
 									+ "\n";
 
 	private Text text;
@@ -30,7 +31,7 @@ public class DebugHudBehaivour : MonoBehaviour {
 
 		if (player != null)
 		{
-			text.text = string.Format(DebugMessageFormat, GameMaster.Version, 1 / Time.deltaTime, player.transform.position, player.Velocity, player.IsGrounded);
+			text.text = string.Format(DebugMessageFormat, GameMaster.Version, 1 / Time.deltaTime, player.transform.position, player.Velocity, player.IsGrounded, UniCraft.BlockIdInHand);
 		
 			// Looking Block Debug
 			if (!player.LookingBlock.Equals(default(LocationInfo)))
