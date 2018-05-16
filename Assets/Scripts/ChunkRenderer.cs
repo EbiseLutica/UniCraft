@@ -119,9 +119,10 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 					
 					count++;
 				}
-				if (Time.time - time > 0.05f)
+				if (pc % 100 == 0)
 				{
 					yield return new WaitForEndOfFrame();
+					time = Time.time;
 				}
 				pc++;
 				Progress = (int)((double)pc / max * 100);
@@ -148,7 +149,7 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 
 		float noise = Mathf.PerlinNoise(xSample, zSample);
 
-		y = (_maxHeight / 2) * noise + (_maxHeight / 2);
+		y = _maxHeight * noise;
 
 		return Mathf.RoundToInt(y);
 	}
@@ -194,7 +195,7 @@ public struct LocationInfo
 	public string BlockId { get; }
 	public int Meta { get; set; }
 	public GameObject ActualObject { get; }
-	public Vector3 Location { get; }
+	public Vector3Int Location { get; }
 	public ITileEntity TileEntity { get; set; }
 	public Renderer ActualRenderer => renderer != null ? renderer : renderer = (ActualObject != null ? ActualObject.GetComponent<Renderer>() : null);
 
