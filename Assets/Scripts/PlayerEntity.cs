@@ -150,14 +150,14 @@ public class PlayerEntity : BaseBehaviour
 
 			if (Input.GetButtonDown("Punch"))
 			{
-				Destroy(lookingObject);
+				Chunk.SetBlock("unicraft:air", LookingBlock.Location);
 			}
 
 			if (Input.GetButtonDown("Interact"))
 			{
 				var candidate = Vector3Int.CeilToInt(LookingBlock.Location + hit.normal);
 				
-				ChunkRenderer.Instance.SetBlock("unicraft:dirt", candidate);
+				Chunk.SetBlock("unicraft:dirt", candidate);
 			}
 
 
