@@ -8,15 +8,16 @@ public class BlockDirt : BlockBase
 
 	public override void OnTick(Vector3Int location)
 	{
-		// 周囲8ブロックで，上3mから下1mの間に草ブロックが存在すれば，伝搬する
-		if (CheckGrass(location + new Vector3Int(-1, 0, -1)) ||
+		// 周囲8ブロックで，上3mから下1mの間に草ブロックが存在し，直上にブロックがなければ，草が伝搬する
+		if (Chunk[location + Vector3Int.up].BlockId == "unicraft:air" &&
+			(CheckGrass(location + new Vector3Int(-1, 0, -1)) ||
 			CheckGrass(location + new Vector3Int(-1, 0,  0)) ||
 			CheckGrass(location + new Vector3Int(-1, 0,  1)) ||
 			CheckGrass(location + new Vector3Int( 0, 0,  1)) ||
 			CheckGrass(location + new Vector3Int( 1, 0,  1)) ||
 			CheckGrass(location + new Vector3Int( 1, 0,  0)) ||
 			CheckGrass(location + new Vector3Int( 1, 0, -1)) ||
-			CheckGrass(location + new Vector3Int( 0, 0, -1)))
+			CheckGrass(location + new Vector3Int( 0, 0, -1))))
 			Chunk.SetBlock("unicraft:grass", location);
 	}
 
