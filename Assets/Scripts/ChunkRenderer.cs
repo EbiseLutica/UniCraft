@@ -1,4 +1,4 @@
-﻿//  以下のサイトからいただきました
+//  以下のサイトからいただきました
 //  http://kan-kikuchi.hatenablog.com/entry/PerlinNoise
 //
 //  Created by kan kikuchi on 2016.3.14.
@@ -57,6 +57,19 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 	protected override void Awake()
 	{
 		
+	}
+
+	void Update()
+	{
+		if (blocksDic.Count > 0)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				// ランダムティック更新
+				var info = blocksDic.Values.ToArray()[Random.Range(0, blocksDic.Values.Count)];
+				info.ActualObject.GetComponent<BlockBase>().OnTick(info.Location);
+			}
+		}
 	}
 
 	/// <summary>

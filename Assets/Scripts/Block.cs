@@ -1,30 +1,16 @@
 using UnityEngine;
 
-public class Block : BaseBehaviour
+public class Block : BlockBase
 {
 	[SerializeField]
 	private float miningTime;
-	public float MiningTime
-	{
-		get { return miningTime; }
-		set { miningTime = value; }
-	}
+	public override float MiningTime => miningTime;
 
 	[SerializeField]
 	private Hardness hardness;
-	public Hardness Hardness
-	{
-		get { return hardness; }
-		set { hardness = value; }
-	}
+	public　override Hardness Hardness => hardness;
 
 	[SerializeField]
 	private BreakableTool breakableTool;
-	public BreakableTool BreakableTool
-	{
-		get { return breakableTool; }
-		set { breakableTool = value; }
-	}
-
-	public virtual void OnInteract(Vector3Int location, BaseBehaviour interacter) { }
+	public　override BreakableTool BreakableTool => breakableTool;
 }
