@@ -955,8 +955,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546b6072da5194cd59bb18335c81659f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 32
-  _depth: 32
+  _width: 16
+  _depth: 16
   _maxHeight: 80
   amp: 15
   mapSize: 1
