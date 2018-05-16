@@ -132,6 +132,15 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 
 	public LocationInfo SetBlock(string id, Vector3Int loc)
 	{
+		if (blocksDic.ContainsKey(loc))
+		{
+			Destroy(blocksDic[loc].ActualObject);
+			blocksDic.Remove(loc);
+		}
+
+		if (id == "unicraft:air")
+			return new LocationInfo("unicraft:air", loc, null);
+
 		GameObject cube = Instantiate(BlockRegister.Instance[id].gameObject);
 		cube.transform.parent = transform;
 		cube.transform.localPosition = loc;
