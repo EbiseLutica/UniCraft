@@ -39,7 +39,7 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 
 	private Dictionary<Vector3Int, LocationInfo> blocksDic = new Dictionary<Vector3Int, LocationInfo>();
 
-	public LocationInfo this[Vector3Int loc] => blocksDic != null && blocksDic.ContainsKey(loc) ? blocksDic[loc] : new LocationInfo("unicraft:id", loc, null);
+	public LocationInfo this[Vector3Int loc] => blocksDic != null && blocksDic.ContainsKey(loc) ? blocksDic[loc] : new LocationInfo("unicraft:air", loc, null);
 
 
 	public LocationInfo GetBlockInfoOf(GameObject game)
