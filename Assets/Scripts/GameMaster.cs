@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GameMaster : Singleton<GameMaster>
@@ -16,8 +16,23 @@ public class GameMaster : Singleton<GameMaster>
 	{
 		Application.targetFrameRate = 60;
 
+		CursorLocked = true;
+
 		yield return ChunkRenderer.Instance.Populate(System.DateTime.Now.GetHashCode());
 		SpawnPlayer(new Vector3(0, ChunkRenderer.Instance.GetSurfaceY(0, 0) + 2, 0));
+	}
+
+	public bool CursorLocked
+	{
+		set
+		{
+			Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
+			Cursor.visible = !value;
+		}
+		get
+		{
+			return Cursor.lockState == CursorLockMode.Locked && !Cursor.visible;
+		}
 	}
 
 	public void SpawnPlayer(Vector3 pos)
