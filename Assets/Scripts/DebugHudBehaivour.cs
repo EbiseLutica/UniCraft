@@ -14,8 +14,11 @@ public class DebugHudBehaivour : BaseBehaviour {
 									+ "(C)2018 Xeltica\n"
 									+ "\n"
 									+ "FPS:{1}\n"
+									+ "\n"
 									+ "Pp:{2} Pv:{3} Pg:{4}\n"
-									+ "Hand: {5}"
+									+ "Hand:{5}\n"
+									+ "\n"
+									+ "Day:{6} Time:{7}\n"
 									+ "\n";
 
 	private Text text;
@@ -31,7 +34,7 @@ public class DebugHudBehaivour : BaseBehaviour {
 
 		if (player != null)
 		{
-			text.text = string.Format(DebugMessageFormat, GameMaster.Version, 1 / Time.deltaTime, player.transform.position, player.Velocity, player.IsGrounded, UniCraft.BlockIdInHand);
+			text.text = string.Format(DebugMessageFormat, GameMaster.Version, 1 / Time.deltaTime, player.transform.position, player.Velocity, player.IsGrounded, UniCraft.BlockIdInHand, Daylight.Day, Daylight.GameTime);
 		
 			// Looking Block Debug
 			if (!player.LookingBlock.Equals(default(LocationInfo)))
