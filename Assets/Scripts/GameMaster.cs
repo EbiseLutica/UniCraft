@@ -9,6 +9,7 @@ public class GameMaster : Singleton<GameMaster>
 	public PlayerEntity Player { get; private set; }
 
 
+	public string Name { get; set; } = "Xeltica";
 
 	public static readonly string Version = "Indev 0.3.0";
 
