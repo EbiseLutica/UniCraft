@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Security;
@@ -158,9 +158,16 @@ public class PlayerEntity : BaseBehaviour
 
 			if (Input.GetButtonDown("Interact"))
 			{
+				BlockBase bl;
+				if ((bl = BlockRegister.Instance[LookingBlock.BlockId]) is IInteractable)
+				{
+					(bl as IInteractable).OnInteract(LookingBlock.Location, this);
+				}
+				else
+				{
 				var candidate = Vector3Int.CeilToInt(LookingBlock.Location + hit.normal);
-				
 				Chunk.SetBlock(UniCraft.BlockIdInHand, candidate);
+			}
 			}
 
 

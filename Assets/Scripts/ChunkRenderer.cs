@@ -59,17 +59,22 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 		
 	}
 
+	void Start()
+	{
+
+	}
+
+	List<KeyValuePair<Vector3Int, ITickable>> tickableCache = new List<KeyValuePair<Vector3Int, ITickable>>();
+
 	void Update()
 	{
 		if (blocksDic.Count > 0)
 		{
-			for (int i = 0; i < 10; i++)
-			{
-				// ランダムティック更新
-				var info = blocksDic.Values.ToArray()[Random.Range(0, blocksDic.Values.Count)];
-				info.ActualObject.GetComponent<BlockBase>().OnTick(info.Location);
-			}
+			// ランダムティック更新
+			var candidate = tickableCache[Random.Range(0, tickableCache.Count)];
+			candidate.Value.OnTick(candidate.Key);
 		}
+			
 	}
 
 	/// <summary>
@@ -134,6 +139,10 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 	{
 		if (blocksDic.ContainsKey(loc))
 		{
+			var b = blocksDic[loc].ActualObject.GetComponent<BlockBase>();
+			if (b is ITickable)
+				tickableCache.RemoveAll(k => k.Value == b);
+
 			Destroy(blocksDic[loc].ActualObject);
 			blocksDic.Remove(loc);
 		}
@@ -142,6 +151,12 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 			return new LocationInfo("unicraft:air", loc, null);
 
 		GameObject cube = Instantiate(BlockRegister.Instance[id].gameObject);
+
+		BlockBase block = cube.GetComponent<BlockBase>();
+
+		if (block is ITickable)
+			tickableCache.Add(new KeyValuePair<Vector3Int, ITickable>(loc, block as ITickable));
+
 		cube.transform.parent = transform;
 		cube.transform.localPosition = loc;
 
