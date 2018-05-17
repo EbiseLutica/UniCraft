@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Security;
@@ -87,16 +87,21 @@ public class PlayerEntity : BaseBehaviour
 
 		if (transform.position.y < 0 && timeTmp >= 0.25f)
 		{
-			Health--;
+			Damage(4, "{0} は奈落に落ちた");
 			timeTmp = 0;
 		}
 
 		timeTmp += Time.deltaTime;
 
+	}
+
+	public void Damage(int amount, string killerMessage)
+	{
+		Health -= amount;
 		if (Health <= 0)
 		{
 			IsDead = true;
-			UniCraft.ShowDeathGUI("{0} は奈落に落ちた");
+			UniCraft.ShowDeathGUI(killerMessage);
 		}
 	}
 
@@ -165,9 +170,9 @@ public class PlayerEntity : BaseBehaviour
 				}
 				else
 				{
-				var candidate = Vector3Int.CeilToInt(LookingBlock.Location + hit.normal);
-				Chunk.SetBlock(UniCraft.BlockIdInHand, candidate);
-			}
+					var candidate = Vector3Int.CeilToInt(LookingBlock.Location + hit.normal);
+					Chunk.SetBlock(UniCraft.BlockIdInHand, candidate);
+				}
 			}
 
 
