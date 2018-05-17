@@ -411,6 +411,8 @@ MonoBehaviour:
     Block: {fileID: 114726370364070532, guid: dee0dc4f0626b46ad92dbfbf13db93dc, type: 2}
   - Key: unicraft:log
     Block: {fileID: 114003985991287334, guid: 0d4b07907e00241b4b0530855ac0c76d, type: 2}
+  - Key: unicraft:bed
+    Block: {fileID: 114822561575011508, guid: 2a4c1ef1e49944c86bb0674b726df541, type: 2}
   - Key: unicraft:plank
     Block: {fileID: 114724062163876706, guid: b08180977cd404a0d9f8e8cb5d5fec12, type: 2}
 --- !u!1 &720815547
@@ -997,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 454f6a5445ffe4395bb2e92cda857f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realTimeOfADay: 600
+  realTimeOfADay: 1200
 --- !u!1 &1354074916
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,8 +1228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546b6072da5194cd59bb18335c81659f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _width: 32
-  _depth: 32
+  _width: 8
+  _depth: 8
   _maxHeight: 15
   amp: 15
   mapSize: 1
