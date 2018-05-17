@@ -15,9 +15,9 @@ public class DaylightCycleController : Singleton<DaylightCycleController> {
 
 	public float RotateRatio => 360 / realTimeOfADay;
 
-	public float GameTime { get; private set; }
+	public float GameTime { get; set; }
 
-	public int Day { get; private set; }
+	public int Day { get; set; }
 
 	// Use this for initialization
 	void Start () {
