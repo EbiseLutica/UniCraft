@@ -409,6 +409,10 @@ MonoBehaviour:
     Block: {fileID: 114565191082019706, guid: 0d7a41fd70f2d45edb6d81f72e03c23d, type: 2}
   - Key: unicraft:bedrock
     Block: {fileID: 114726370364070532, guid: dee0dc4f0626b46ad92dbfbf13db93dc, type: 2}
+  - Key: unicraft:log
+    Block: {fileID: 114003985991287334, guid: 0d4b07907e00241b4b0530855ac0c76d, type: 2}
+  - Key: unicraft:plank
+    Block: {fileID: 114724062163876706, guid: b08180977cd404a0d9f8e8cb5d5fec12, type: 2}
 --- !u!1 &720815547
 GameObject:
   m_ObjectHideFlags: 0
