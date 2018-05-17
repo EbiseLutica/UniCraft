@@ -16,12 +16,12 @@ public class GameMaster : Singleton<GameMaster>
 	IEnumerator Start()
 	{
 		Application.targetFrameRate = 60;
+		blockIds = BlockRegister.Instance.GetBlockIds();
 		
 		CursorLocked = true;
 
 		yield return ChunkRenderer.Instance.Populate(System.DateTime.Now.GetHashCode());
 		SpawnPlayer(new Vector3(0, ChunkRenderer.Instance.GetSurfaceY(0, 0) + 2, 0));
-		blockIds = BlockRegister.Instance.GetBlockIds();
 	}
 
 	private string[] blockIds;
