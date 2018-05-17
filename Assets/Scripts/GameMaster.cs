@@ -21,6 +21,7 @@ public class GameMaster : Singleton<GameMaster>
 		blockIds = BlockRegister.Instance.GetBlockIds();
 		
 		CursorLocked = true;
+		
 
 		yield return ChunkRenderer.Instance.Populate(System.DateTime.Now.GetHashCode());
 		SpawnPlayer(new Vector3(0, ChunkRenderer.Instance.GetSurfaceY(0, 0) + 2, 0));
@@ -43,7 +44,10 @@ public class GameMaster : Singleton<GameMaster>
 			blockInHand = blockIds.Length - 1;
 
 		if (blockInHand >= blockIds.Length)
-			blockInHand = 0;	
+			blockInHand = 0;
+
+		if (Input.GetKeyDown(KeyCode.Escape))
+			Application.Quit();
 	}
 
 	public void ShowDeathGUI(string reason = null)
