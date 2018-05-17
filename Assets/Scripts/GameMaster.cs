@@ -8,6 +8,8 @@ public class GameMaster : Singleton<GameMaster>
 
 	public PlayerEntity Player { get; private set; }
 
+	[SerializeField]
+	private DeathHudBehaviour guiDeath;
 
 	public string Name { get; set; } = "Xeltica";
 
@@ -41,8 +43,15 @@ public class GameMaster : Singleton<GameMaster>
 			blockInHand = blockIds.Length - 1;
 
 		if (blockInHand >= blockIds.Length)
-			blockInHand = 0;
-			
+			blockInHand = 0;	
+	}
+
+	public void ShowDeathGUI(string reason = null)
+	{
+		if (reason == null) reason = $"{0} は不明の死を遂げた";
+		CursorLocked = false;
+		guiDeath.Reason = string.Format(reason, UniCraft.Name);
+		guiDeath.gameObject.SetActive(true);
 	}
 
 	public bool CursorLocked

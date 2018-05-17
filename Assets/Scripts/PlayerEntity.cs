@@ -77,9 +77,12 @@ public class PlayerEntity : BaseBehaviour
 
 	float timeTmp;
 
+	public bool IsDead {get; private set; }
+
 	// Update is called once per frame
 	void Update()
 	{
+		if (IsDead) return;
 		ProcessInput();
 
 		if (transform.position.y < 0 && timeTmp >= 0.25f)
@@ -92,7 +95,8 @@ public class PlayerEntity : BaseBehaviour
 
 		if (Health <= 0)
 		{
-			SceneManager.LoadScene("Main");
+			IsDead = true;
+			UniCraft.ShowDeathGUI("{0} は奈落に落ちた");
 		}
 	}
 
