@@ -19,6 +19,10 @@ public class DaylightCycleController : Singleton<DaylightCycleController> {
 
 	public int Day { get; set; }
 
+	public bool IsDay => GameTime * RotateRatio < 160;
+
+	public bool IsNight => !IsDay;
+
 	// Use this for initialization
 	void Start () {
 		GameTime = RealTimeOfADay / 4;
