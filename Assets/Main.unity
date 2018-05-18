@@ -415,6 +415,8 @@ MonoBehaviour:
     Block: {fileID: 114822561575011508, guid: 2a4c1ef1e49944c86bb0674b726df541, type: 2}
   - Key: unicraft:plank
     Block: {fileID: 114724062163876706, guid: b08180977cd404a0d9f8e8cb5d5fec12, type: 2}
+  - Key: unicraft:torch
+    Block: {fileID: 114731256418028864, guid: 23f76ecc201c44876ac596bdf98ce7ff, type: 2}
 --- !u!1 &720815547
 GameObject:
   m_ObjectHideFlags: 0
