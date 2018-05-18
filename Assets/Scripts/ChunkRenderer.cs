@@ -54,16 +54,6 @@ public class ChunkRenderer : Singleton<ChunkRenderer>
 	//初期化
 	//=================================================================================
 
-	protected override void Awake()
-	{
-		
-	}
-
-	void Start()
-	{
-
-	}
-
 	List<KeyValuePair<Vector3Int, ITickable>> tickableCache = new List<KeyValuePair<Vector3Int, ITickable>>();
 
 	void Update()
