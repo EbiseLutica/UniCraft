@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 草ブロック．
+/// </summary>
 public class BlockGrass : BlockBase, ITickable
 {
 	public override BreakableTool BreakableTool => BreakableTool.Shovel;

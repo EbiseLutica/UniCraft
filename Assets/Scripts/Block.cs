@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 無機能ブロックです．インスペクター上でパラメーターを自由に設定できます．
+/// </summary>
 public class Block : BlockBase
 {
 	[SerializeField]

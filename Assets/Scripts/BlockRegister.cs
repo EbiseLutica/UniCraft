@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// ブロックの登録クラスです．インスペクター上でブロック登録を行います．
+/// </summary>
+/// <typeparam name="BlockRegister"></typeparam>
 public class BlockRegister : Singleton<BlockRegister> 
 {	
 	[SerializeField]
