@@ -48,6 +48,17 @@ public class GameMaster : Singleton<GameMaster>
 
 		if (Input.GetKeyDown(KeyCode.Escape))
 			Application.Quit();
+
+		if (CursorLocked)
+		{
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
+		}
+		else
+		{
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+		}
 	}
 
 	public void ShowDeathGUI(string reason = null)
@@ -58,18 +69,7 @@ public class GameMaster : Singleton<GameMaster>
 		guiDeath.gameObject.SetActive(true);
 	}
 
-	public bool CursorLocked
-	{
-		set
-		{
-			Cursor.lockState = value ? CursorLockMode.Locked : CursorLockMode.None;
-			Cursor.visible = !value;
-		}
-		get
-		{
-			return Cursor.lockState == CursorLockMode.Locked && !Cursor.visible;
-		}
-	}
+	public bool CursorLocked { get; set; }
 
 	public void SpawnPlayer(Vector3 pos)
 	{
