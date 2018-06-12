@@ -14,6 +14,9 @@ public class GameMaster : Singleton<GameMaster>
 	public string Name { get; set; } = "Xeltica";
 
 	public static readonly string Version = "Indev 0.3.0";
+	
+	public static readonly string ShortVersion = "indev0.3";
+
 
 	IEnumerator Start()
 	{
